@@ -35,7 +35,32 @@
         };
     </script>
 </head>
-<body class="bg-background-light dark:bg-background-dark font-body text-text-light dark:text-text-dark antialiased min-h-screen flex flex-col md:flex-row">
+<body class="bg-background-light dark:bg-background-dark font-body text-text-light dark:text-text-dark antialiased min-h-screen">
+
+<!-- Login Screen -->
+<div id="login-container" class="flex min-h-screen items-center justify-center p-4">
+    <div class="w-full max-w-md bg-surface-light dark:bg-surface-dark rounded-xl shadow-lg border border-border-light dark:border-border-dark p-8">
+        <div class="text-center mb-8">
+            <h1 class="text-3xl font-display font-bold mb-2">Admin <span class="text-primary">Login</span></h1>
+            <p class="text-gray-500 dark:text-gray-400 text-sm">Sign in to manage Ceramic Pro Egypt content</p>
+        </div>
+        <form id="login-form" class="space-y-6">
+            <div>
+                <label class="block text-sm font-medium mb-2">Email Address</label>
+                <input id="login-email" type="email" required class="w-full bg-background-light dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary focus:outline-none" placeholder="admin@example.com">
+            </div>
+            <div>
+                <label class="block text-sm font-medium mb-2">Password</label>
+                <input id="login-password" type="password" required class="w-full bg-background-light dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary focus:outline-none" placeholder="••••••••">
+            </div>
+            <div id="login-error" class="text-red-500 text-sm hidden"></div>
+            <button type="submit" class="w-full bg-primary hover:bg-primary-hover text-white font-bold py-3 rounded-lg transition-colors">Sign In</button>
+        </form>
+    </div>
+</div>
+
+<!-- Admin Dashboard -->
+<div id="dashboard-container" class="hidden min-h-screen flex-col md:flex-row">
 <aside class="w-full md:w-64 bg-surface-light dark:bg-surface-dark border-r border-border-light dark:border-border-dark flex-shrink-0 flex flex-col h-auto md:h-screen sticky top-0 z-50">
 <div class="p-6 flex items-center justify-center border-b border-border-light dark:border-border-dark">
 <div class="flex items-center gap-2">
@@ -232,6 +257,7 @@
 <p>© 2024 Ceramic Pro Egypt. All rights reserved. <span class="block sm:inline">Designed for Admin Use Only.</span></p>
 </footer>
 </main>
+</div>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="js/supabase.js"></script>
 <script src="js/admin.js"></script>

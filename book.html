@@ -78,12 +78,12 @@
 <span class="font-display font-bold text-xl uppercase tracking-wider hidden sm:block" style="">Ceramic Pro <span class="text-primary" style="">Egypt</span></span>
 </a>
 <div class="flex items-center space-x-4">
-<a class="text-sm font-medium hover:text-primary transition-colors hidden md:block" href="index.html#services" style="">Services</a>
-<a class="text-sm font-medium hover:text-primary transition-colors hidden md:block" href="#" style="">Gallery</a>
-<a class="text-sm font-medium hover:text-primary transition-colors hidden md:block mr-4" href="contact.html" style="">Contact</a>
-<button class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors flex items-center gap-1 text-sm font-medium" style="">
+<a class="text-sm font-medium hover:text-primary transition-colors hidden md:block" href="index.html#services" style="" data-i18n="nav.services">Services</a>
+<a class="text-sm font-medium hover:text-primary transition-colors hidden md:block" href="index.html#about" style="" data-i18n="nav.about">About</a>
+<a class="text-sm font-medium hover:text-primary transition-colors hidden md:block mr-4" href="contact.html" style="" data-i18n="nav.contact">Contact</a>
+<button class="lang-toggle-btn p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors flex items-center gap-1 text-sm font-medium" style="">
 <span class="material-icons-round text-lg" style="">language</span>
-<span class="" style="">EN</span>
+<span class="lang-display" style="">EN</span>
 </button>
 <button class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-primary" id="theme-toggle" style="">
 <span class="material-icons-round hidden" id="theme-icon-light" style="">light_mode</span>
@@ -98,8 +98,8 @@
 </nav>
 <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 w-full">
 <div class="text-center mb-12">
-<h1 class="font-display text-4xl md:text-5xl font-bold mb-4 uppercase tracking-tight" style="">Book An <span class="text-primary" style="">Appointment</span></h1>
-<p class="text-text-muted-light dark:text-text-muted-dark max-w-2xl mx-auto text-lg" style="">
+<h1 class="font-display text-4xl md:text-5xl font-bold mb-4 uppercase tracking-tight" style=""><span data-i18n="book.title">Book An</span> <span class="text-primary" style="" data-i18n="book.title_span">Appointment</span></h1>
+<p class="text-text-muted-light dark:text-text-muted-dark max-w-2xl mx-auto text-lg" style="" data-i18n="book.subtitle">
                 Select your premium service, choose a convenient time, and let us restore your vehicle to perfection.
             </p>
 </div>
@@ -116,7 +116,7 @@
 <div class="p-5 rounded-lg border-2 border-border-light dark:border-border-dark hover:border-primary/50 dark:hover:border-primary/50 transition-all h-full flex flex-col justify-between">
 <div>
 <div class="flex justify-between items-start mb-2">
-<h3 class="font-bold text-lg" style="">PPF Protection</h3>
+<h3 class="font-bold text-lg" style="" data-i18n="services.ppf.title">PPF Protection</h3>
 <span class="text-primary font-bold" style=""><span id="price-ppf">15,000</span> L.E.</span>
 </div>
 <p class="text-sm text-text-muted-light dark:text-text-muted-dark mb-4" style="">High-gloss Paint Protection Film to prevent scratches and chips.</p>
@@ -132,7 +132,7 @@
 <div class="p-5 rounded-lg border-2 border-border-light dark:border-border-dark hover:border-primary/50 dark:hover:border-primary/50 transition-all h-full flex flex-col justify-between">
 <div>
 <div class="flex justify-between items-start mb-2">
-<h3 class="font-bold text-lg" style="">Nano Ceramic</h3>
+<h3 class="font-bold text-lg" style="" data-i18n="services.nano.title">Nano Ceramic</h3>
 <span class="text-primary font-bold" style=""><span id="price-nano">8,500</span> L.E.</span>
 </div>
 <p class="text-sm text-text-muted-light dark:text-text-muted-dark mb-4" style="">9H ceramic coating for extreme gloss and hydrophobic effect.</p>
@@ -148,7 +148,7 @@
 <div class="p-5 rounded-lg border-2 border-border-light dark:border-border-dark hover:border-primary/50 dark:hover:border-primary/50 transition-all h-full flex flex-col justify-between">
 <div>
 <div class="flex justify-between items-start mb-2">
-<h3 class="font-bold text-lg" style="">Paint Correction</h3>
+<h3 class="font-bold text-lg" style="" data-i18n="services.correction.title">Paint Correction</h3>
 <span class="text-primary font-bold" style=""><span id="price-correction">4,000</span> L.E.</span>
 </div>
 <p class="text-sm text-text-muted-light dark:text-text-muted-dark mb-4" style="">Multi-stage polishing to remove swirls and oxidation.</p>
@@ -164,7 +164,7 @@
 <div class="p-5 rounded-lg border-2 border-border-light dark:border-border-dark hover:border-primary/50 dark:hover:border-primary/50 transition-all h-full flex flex-col justify-between">
 <div>
 <div class="flex justify-between items-start mb-2">
-<h3 class="font-bold text-lg" style="">Full Detailing</h3>
+<h3 class="font-bold text-lg" style="" data-i18n="services.interior.title">Full Detailing</h3>
 <span class="text-primary font-bold" style=""><span id="price-interior">3,500</span> L.E.</span>
 </div>
 <p class="text-sm text-text-muted-light dark:text-text-muted-dark mb-4" style="">Deep interior cleaning and exterior wash with premium wax.</p>
@@ -179,7 +179,7 @@
 <input class="service-radio sr-only" name="service" type="radio" value="headlights">
 <div class="p-5 rounded-lg border-2 border-border-light dark:border-border-dark hover:border-primary/50 dark:hover:border-primary/50 transition-all flex flex-col sm:flex-row justify-between sm:items-center">
 <div>
-<h3 class="font-bold text-lg" style="">Headlights Polish</h3>
+<h3 class="font-bold text-lg" style="" data-i18n="services.headlights.title">Headlights Polish</h3>
 <p class="text-sm text-text-muted-light dark:text-text-muted-dark" style="">Restoration of foggy headlights for clarity and safety.</p>
 </div>
 <div class="mt-2 sm:mt-0 flex flex-col sm:items-end">
@@ -323,7 +323,7 @@
 </a>
 </div>
 <div class="mt-8 md:mt-0 md:order-1">
-<p class="text-center text-sm text-text-muted-light dark:text-text-muted-dark font-display" style="">
+<p class="text-center text-sm text-text-muted-light dark:text-text-muted-dark font-display" style="" data-i18n="footer.rights">
                         © 2024 Ceramic Pro Egypt. All rights reserved.
                     </p>
 </div>
@@ -348,5 +348,6 @@
         });
     });
 </script>
+<script src="js/i18n.js"></script>
 </body>
 </html>

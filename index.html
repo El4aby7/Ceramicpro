@@ -51,24 +51,25 @@
 <nav class="sticky top-0 z-50 bg-surface-light/90 dark:bg-surface-dark/90 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 <div class="flex justify-between items-center h-20">
-<div class="flex-shrink-0 flex items-center gap-3">
+<a href="index.html" class="flex-shrink-0 flex items-center gap-3">
 <img alt="Ceramic Pro Logo" class="h-12 w-auto" src="assets/images/logo.jpg" id="nav-logo" style="">
 <span class="font-display font-bold text-xl tracking-wider hidden sm:block" style="">CERAMIC PRO EGYPT</span>
-</div>
+</a>
 <div class="hidden md:flex items-center space-x-8">
-<a class="text-gray-600 dark:text-gray-300 hover:text-primary transition-colors font-medium" href="#about" style="">About</a>
-<a class="text-gray-600 dark:text-gray-300 hover:text-primary transition-colors font-medium" href="#services" style="">Services</a>
-<a class="text-gray-600 dark:text-gray-300 hover:text-primary transition-colors font-medium" href="contact.html" style="">Contact</a>
+<a class="text-gray-600 dark:text-gray-300 hover:text-primary transition-colors font-medium" href="#about" style="" data-i18n="nav.about">About</a>
+<a class="text-gray-600 dark:text-gray-300 hover:text-primary transition-colors font-medium" href="#services" style="" data-i18n="nav.services">Services</a>
+<a class="text-gray-600 dark:text-gray-300 hover:text-primary transition-colors font-medium" href="book.html" style="" data-i18n="nav.book">Book Now</a>
+<a class="text-gray-600 dark:text-gray-300 hover:text-primary transition-colors font-medium" href="contact.html" style="" data-i18n="nav.contact">Contact</a>
 <div class="flex items-center space-x-4 border-l border-gray-300 dark:border-gray-700 pl-6">
 <button class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" id="theme-toggle" style="">
 <span class="material-icons-outlined text-gray-600 dark:text-gray-300" id="theme-icon" style="">dark_mode</span>
 </button>
-<button class="flex items-center space-x-1 text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-primary transition-colors" style="">
+<button class="lang-toggle-btn flex items-center space-x-1 text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-primary transition-colors" style="">
 <span class="material-icons-outlined text-lg" style="">language</span>
-<span class="" style="">EN</span>
+<span class="lang-display" style="">EN</span>
 </button>
 </div>
-<a class="bg-primary hover:bg-primary-hover text-white px-6 py-2 rounded-full font-bold transition-transform transform hover:scale-105 shadow-lg shadow-primary/30" href="book.html" style="">
+<a class="bg-primary hover:bg-primary-hover text-white px-6 py-2 rounded-full font-bold transition-transform transform hover:scale-105 shadow-lg shadow-primary/30" href="book.html" style="" data-i18n="nav.book">
                         Book Now
                     </a>
 </div>
@@ -86,23 +87,23 @@
 <div class="order-2 lg:order-1">
 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-bold mb-6" style="">
 <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
-                        Premium Automotive Care
+                        <span data-i18n="hero.badge">Premium Automotive Care</span>
                     </div>
 <h1 class="font-display text-5xl lg:text-7xl font-black leading-tight mb-6" style="">
-                        PROTECT YOUR <br>
-<span class="bg-gradient-to-r from-primary to-purple-600 text-gradient text-transparent" style="">INVESTMENT</span>
+                        <span data-i18n="hero.title1">PROTECT YOUR</span> <br>
+<span class="bg-gradient-to-r from-primary to-purple-600 text-gradient text-transparent" style="" data-i18n="hero.title2">INVESTMENT</span>
 </h1>
-<p class="text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-lg leading-relaxed" style="">
+<p class="text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-lg leading-relaxed" style="" data-i18n="hero.desc">
                         At Ceramic Pro Egypt, we redefine automotive perfection. Using world-class nanotechnology, we provide superior protection for surfaces. We specialize in PPF, Ceramic Coatings, and high-end detailing to keep your vehicle looking pristine.
                     </p>
 <div class="flex flex-col sm:flex-row gap-4">
 <a href="#services" class="bg-primary text-white px-8 py-4 rounded font-bold hover:bg-primary-hover transition-all shadow-lg shadow-primary/40 flex items-center justify-center gap-2" style="">
-                            Explore Services
+                            <span data-i18n="hero.explore">Explore Services</span>
                             <span class="material-icons-outlined" style="">arrow_forward</span>
 </a>
 <button class="bg-white dark:bg-surface-dark text-gray-800 dark:text-white border border-gray-200 dark:border-gray-700 px-8 py-4 rounded font-bold hover:bg-gray-50 dark:hover:bg-gray-800 transition-all flex items-center justify-center gap-2" style="">
 <span class="material-icons-outlined" style="">play_circle</span>
-                            Watch Video
+                            <span data-i18n="hero.watch">Watch Video</span>
                         </button>
 </div>
 </div>
@@ -118,8 +119,8 @@
 <section class="py-24 bg-gray-50 dark:bg-black/20" id="services">
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 <div class="text-center mb-16">
-<h2 class="font-display text-4xl font-bold mb-4" style="">Our Premium <span class="text-primary" style="">Services</span></h2>
-<p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto" style="">World-class protection and restoration services tailored for luxury vehicles.</p>
+<h2 class="font-display text-4xl font-bold mb-4" style=""><span data-i18n="services.title">Our Premium</span> <span class="text-primary" style="" data-i18n="services.title_span">Services</span></h2>
+<p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto" style="" data-i18n="services.subtitle">World-class protection and restoration services tailored for luxury vehicles.</p>
 </div>
 <div class="space-y-24">
 <div class="group relative bg-white dark:bg-surface-dark rounded-2xl p-8 lg:p-12 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-800 overflow-visible">
@@ -128,8 +129,8 @@
 <div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6 text-primary">
 <span class="material-icons-outlined text-3xl" style="">shield</span>
 </div>
-<h3 class="font-display text-3xl font-bold mb-4" style="">Paint Protection Film (PPF)</h3>
-<p class="text-gray-600 dark:text-gray-400 mb-6" style="">
+<h3 class="font-display text-3xl font-bold mb-4" style="" data-i18n="services.ppf.title">Paint Protection Film (PPF)</h3>
+<p class="text-gray-600 dark:text-gray-400 mb-6" style="" data-i18n="services.ppf.desc">
                                 The ultimate armor for your vehicle. Our self-healing PPF protects against rock chips, scratches, and road debris while maintaining a high-gloss invisible finish.
                             </p>
 <ul class="space-y-2 mb-8 text-sm text-gray-500 dark:text-gray-400">
@@ -139,7 +140,7 @@
 </ul>
 <div class="flex items-center justify-between mt-auto pt-6 border-t border-gray-100 dark:border-gray-700">
 <span class="text-2xl font-bold font-display text-gray-900 dark:text-white" style="">From <span id="price-ppf">15,000</span> L.E.</span>
-<a href="book.html" class="text-primary font-bold hover:underline decoration-2 underline-offset-4" style="">Details →</a>
+<a href="book.html" class="text-primary font-bold hover:underline decoration-2 underline-offset-4" style="" data-i18n="services.btn.details">Details →</a>
 </div>
 </div>
 <div class="relative h-64 lg:h-auto">
@@ -156,8 +157,8 @@
 <div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6 text-primary">
 <span class="material-icons-outlined text-3xl" style="">science</span>
 </div>
-<h3 class="font-display text-3xl font-bold mb-4" style="">Nano Ceramic Protection</h3>
-<p class="text-gray-600 dark:text-gray-400 mb-6" style="">
+<h3 class="font-display text-3xl font-bold mb-4" style="" data-i18n="services.nano.title">Nano Ceramic Protection</h3>
+<p class="text-gray-600 dark:text-gray-400 mb-6" style="" data-i18n="services.nano.desc">
                                 Permanent bond protection. Ceramic Pro 9H forms a permanent bond with the factory paint, which will not wash off or break down.
                             </p>
 <ul class="space-y-2 mb-8 text-sm text-gray-500 dark:text-gray-400">
@@ -167,7 +168,7 @@
 </ul>
 <div class="flex items-center justify-between mt-auto pt-6 border-t border-gray-100 dark:border-gray-700">
 <span class="text-2xl font-bold font-display text-gray-900 dark:text-white" style="">From <span id="price-nano">8,000</span> L.E.</span>
-<a href="book.html" class="text-primary font-bold hover:underline decoration-2 underline-offset-4" style="">Details →</a>
+<a href="book.html" class="text-primary font-bold hover:underline decoration-2 underline-offset-4" style="" data-i18n="services.btn.details">Details →</a>
 </div>
 </div>
 </div>
@@ -178,8 +179,8 @@
 <div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6 text-primary">
 <span class="material-icons-outlined text-3xl" style="">auto_fix_high</span>
 </div>
-<h3 class="font-display text-3xl font-bold mb-4" style="">Paint Correction</h3>
-<p class="text-gray-600 dark:text-gray-400 mb-6" style="">
+<h3 class="font-display text-3xl font-bold mb-4" style="" data-i18n="services.correction.title">Paint Correction</h3>
+<p class="text-gray-600 dark:text-gray-400 mb-6" style="" data-i18n="services.correction.desc">
                                 Restoring your paintwork to better-than-new condition. We remove swirl marks, scratches, and oxidation to reveal the true depth of your color.
                             </p>
 <ul class="space-y-2 mb-8 text-sm text-gray-500 dark:text-gray-400">
@@ -189,7 +190,7 @@
 </ul>
 <div class="flex items-center justify-between mt-auto pt-6 border-t border-gray-100 dark:border-gray-700">
 <span class="text-2xl font-bold font-display text-gray-900 dark:text-white" style="">From <span id="price-correction">4,500</span> L.E.</span>
-<a href="book.html" class="text-primary font-bold hover:underline decoration-2 underline-offset-4" style="">Details →</a>
+<a href="book.html" class="text-primary font-bold hover:underline decoration-2 underline-offset-4" style="" data-i18n="services.btn.details">Details →</a>
 </div>
 </div>
 <div class="relative h-64 lg:h-auto">
@@ -202,8 +203,8 @@
 <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 text-primary">
 <span class="material-icons-outlined text-2xl" style="">cleaning_services</span>
 </div>
-<h3 class="font-display text-2xl font-bold mb-3" style="">Interior Detailing</h3>
-<p class="text-gray-600 dark:text-gray-400 mb-6 flex-grow" style="">
+<h3 class="font-display text-2xl font-bold mb-3" style="" data-i18n="services.interior.title">Interior Detailing</h3>
+<p class="text-gray-600 dark:text-gray-400 mb-6 flex-grow" style="" data-i18n="services.interior.desc">
                             Deep cleaning and leather protection for your cabin. We sanitize and protect every inch of your interior.
                         </p>
 <div class="relative h-48 mb-6 overflow-hidden rounded-lg">
@@ -211,15 +212,15 @@
 </div>
 <div class="flex items-center justify-between border-t border-gray-100 dark:border-gray-700 pt-4">
 <span class="font-bold font-display text-gray-900 dark:text-white" style="">From <span id="price-interior">2,000</span> L.E.</span>
-<a href="book.html" class="text-sm font-semibold text-primary" style="">Learn More</a>
+<a href="book.html" class="text-sm font-semibold text-primary" style="" data-i18n="services.btn.learn">Learn More</a>
 </div>
 </div>
 <div class="bg-white dark:bg-surface-dark rounded-2xl p-8 shadow-lg border border-gray-100 dark:border-gray-800 flex flex-col">
 <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 text-primary">
 <span class="material-icons-outlined text-2xl" style="">light_mode</span>
 </div>
-<h3 class="font-display text-2xl font-bold mb-3" style="">Headlights Polish</h3>
-<p class="text-gray-600 dark:text-gray-400 mb-6 flex-grow" style="">
+<h3 class="font-display text-2xl font-bold mb-3" style="" data-i18n="services.headlights.title">Headlights Polish</h3>
+<p class="text-gray-600 dark:text-gray-400 mb-6 flex-grow" style="" data-i18n="services.headlights.desc">
                             Restore clarity and brightness to foggy headlights for safety and aesthetics. UV protection included.
                         </p>
 <div class="relative h-48 mb-6 overflow-hidden rounded-lg">
@@ -227,7 +228,7 @@
 </div>
 <div class="flex items-center justify-between border-t border-gray-100 dark:border-gray-700 pt-4">
 <span class="font-bold font-display text-gray-900 dark:text-white" style="">From <span id="price-headlights">800</span> L.E.</span>
-<a href="book.html" class="text-sm font-semibold text-primary" style="">Learn More</a>
+<a href="book.html" class="text-sm font-semibold text-primary" style="" data-i18n="services.btn.learn">Learn More</a>
 </div>
 </div>
 </div>
@@ -238,11 +239,11 @@
 <div class="absolute inset-0 bg-primary/90 dark:bg-surface-dark dark:border-t dark:border-gray-800 z-0"></div>
 <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10 z-0"></div>
 <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
-<h2 class="font-display text-4xl font-bold text-white mb-6" style="">Ready to Transform Your Vehicle?</h2>
-<p class="text-white/80 text-lg mb-8" style="">Book your appointment today and experience the Ceramic Pro difference.</p>
+<h2 class="font-display text-4xl font-bold text-white mb-6" style="" data-i18n="cta.title">Ready to Transform Your Vehicle?</h2>
+<p class="text-white/80 text-lg mb-8" style="" data-i18n="cta.desc">Book your appointment today and experience the Ceramic Pro difference.</p>
 <div class="flex flex-col sm:flex-row justify-center gap-4">
-<a href="book.html" class="bg-white text-primary px-8 py-3 rounded font-bold hover:bg-gray-100 transition-colors shadow-lg" style="">Book Appointment</a>
-<a href="contact.html" class="bg-transparent border-2 border-white text-white px-8 py-3 rounded font-bold hover:bg-white/10 transition-colors" style="">Contact Us</a>
+<a href="book.html" class="bg-white text-primary px-8 py-3 rounded font-bold hover:bg-gray-100 transition-colors shadow-lg" style="" data-i18n="cta.btn.book">Book Appointment</a>
+<a href="contact.html" class="bg-transparent border-2 border-white text-white px-8 py-3 rounded font-bold hover:bg-white/10 transition-colors" style="" data-i18n="cta.btn.contact">Contact Us</a>
 </div>
 </div>
 </section>
@@ -251,7 +252,7 @@
 <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
 <div class="col-span-1 md:col-span-1">
 <img alt="Ceramic Pro Logo Small" class="h-10 w-auto mb-6 grayscale opacity-70" src="assets/images/logo.jpg" id="footer-logo" style="">
-<p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed" style="">
+<p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed" style="" data-i18n="footer.desc">
                         Leading the industry in automotive protection technology. Ceramic Pro Egypt is your trusted partner for vehicle preservation.
                     </p>
 </div>
@@ -265,16 +266,14 @@
 </ul>
 </div>
 <div>
-<h4 class="font-display font-bold text-lg mb-6" style="">Company</h4>
+<h4 class="font-display font-bold text-lg mb-6" style="" data-i18n="footer.company">Company</h4>
 <ul class="space-y-3 text-gray-500 dark:text-gray-400 text-sm">
-<li class="" style=""><a class="hover:text-primary transition-colors" href="#about" style="">About Us</a></li>
-<li class="" style=""><a class="hover:text-primary transition-colors" href="#" style="">Gallery</a></li>
-<li class="" style=""><a class="hover:text-primary transition-colors" href="#" style="">Reviews</a></li>
-<li class="" style=""><a class="hover:text-primary transition-colors" href="contact.html" style="">Contact</a></li>
+<li class="" style=""><a class="hover:text-primary transition-colors" href="#about" style="" data-i18n="nav.about">About Us</a></li>
+<li class="" style=""><a class="hover:text-primary transition-colors" href="contact.html" style="" data-i18n="nav.contact">Contact</a></li>
 </ul>
 </div>
 <div>
-<h4 class="font-display font-bold text-lg mb-6" style="">Contact</h4>
+<h4 class="font-display font-bold text-lg mb-6" style="" data-i18n="footer.contact">Contact</h4>
 <ul class="space-y-3 text-gray-500 dark:text-gray-400 text-sm">
 <li class="flex items-center gap-2" style="">
 <span class="material-icons-outlined text-primary text-sm" style="">location_on</span>
@@ -292,7 +291,7 @@
 </div>
 </div>
 <div class="border-t border-gray-200 dark:border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-<p class="text-gray-400 text-xs" style="">© 2024 Ceramic Pro Egypt. All rights reserved.</p>
+<p class="text-gray-400 text-xs" style="" data-i18n="footer.rights">© 2024 Ceramic Pro Egypt. All rights reserved.</p>
 <div class="flex space-x-4">
 <a class="text-gray-400 hover:text-primary" href="#" id="link-facebook" style=""><span class="sr-only" style="">Facebook</span>FB</a>
 <a class="text-gray-400 hover:text-primary" href="#" id="link-instagram" style=""><span class="sr-only" style="">Instagram</span>IG</a>
@@ -304,5 +303,6 @@
 <script src="js/main.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="js/supabase.js"></script>
+<script src="js/i18n.js"></script>
 </body>
 </html>

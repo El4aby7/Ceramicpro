@@ -7,17 +7,78 @@ This is the fully functioning website for Ceramic Pro Egypt, built with HTML, CS
 ### 1. Database Setup (Supabase)
 To power the dynamic prices, links, and images, you need to set up your Supabase project.
 
-1. Go to your [Supabase Dashboard](https://supabase.com/dashboard/project/jwdsrjaaawqmutjjeyan) and open the **SQL Editor** on the left sidebar.
-2. Open the `Sql.md` file provided in this repository.
-3. Copy the SQL code blocks from `Sql.md` and paste them into the Supabase SQL Editor, then click **Run**.
-   * *This will create the `prices`, `images`, and `links` tables, insert the default data, and setup Row Level Security (RLS) so that anyone can view the site, but only authenticated users can edit the site.*
+1. Go to your [Supabase Dashboard](https://supabase.com/dashboard/project/jwdsrjaawqmutjeyan) and open the **SQL Editor** on the left sidebar.
+2. Run the following SQL to set up the database tables and security:
+
+```sql
+-- Create prices table
+CREATE TABLE prices (
+    id SERIAL PRIMARY KEY,
+    service_key VARCHAR(50) UNIQUE NOT NULL,
+    amount VARCHAR(50) NOT NULL
+);
+
+-- Create links table
+CREATE TABLE links (
+    id SERIAL PRIMARY KEY,
+    platform VARCHAR(50) UNIQUE NOT NULL,
+    url TEXT NOT NULL
+);
+
+-- Create images table
+CREATE TABLE images (
+    id SERIAL PRIMARY KEY,
+    image_key VARCHAR(50) UNIQUE NOT NULL,
+    url TEXT NOT NULL
+);
+
+-- Insert default prices
+INSERT INTO prices (service_key, amount) VALUES
+('ppf', '15,000'),
+('nano', '8,000'),
+('correction', '4,500'),
+('interior', '2,000'),
+('headlights', '800');
+
+-- Insert default links
+INSERT INTO links (platform, url) VALUES
+('facebook', 'https://facebook.com/ceramicproegypt'),
+('instagram', 'https://instagram.com/ceramicpro_eg'),
+('phone', '+20 100 123 4567'),
+('email', 'info@ceramicpro.eg');
+
+-- Insert default images
+INSERT INTO images (image_key, url) VALUES
+('logo', ''),
+('hero', ''),
+('ppf', ''),
+('nano', ''),
+('correction', ''),
+('interior', ''),
+('headlights', '');
+
+-- Set up Row Level Security (RLS)
+ALTER TABLE prices ENABLE ROW LEVEL SECURITY;
+ALTER TABLE links ENABLE ROW LEVEL SECURITY;
+ALTER TABLE images ENABLE ROW LEVEL SECURITY;
+
+-- Allow public read access
+CREATE POLICY "Public read access for prices" ON prices FOR SELECT USING (true);
+CREATE POLICY "Public read access for links" ON links FOR SELECT USING (true);
+CREATE POLICY "Public read access for images" ON images FOR SELECT USING (true);
+
+-- Allow authenticated users to update
+CREATE POLICY "Authenticated users can update prices" ON prices FOR UPDATE USING (auth.role() = 'authenticated');
+CREATE POLICY "Authenticated users can update links" ON links FOR UPDATE USING (auth.role() = 'authenticated');
+CREATE POLICY "Authenticated users can update images" ON images FOR UPDATE USING (auth.role() = 'authenticated');
+```
 
 ### 2. Create an Admin User
 Because the website is protected, you must create an admin user to log into the dashboard.
 
 1. In your Supabase dashboard, navigate to **Authentication** > **Users**.
 2. Click **Add User** -> **Create New User**.
-3. Enter your email and a strong password. You will use this to log into the `/login.html` page of your website.
+3. Enter your email and a strong password. You will use this to log into the `/admin.html` page of your website.
 
 ### 3. Local Development
 Because this project uses plain HTML/JS and relies on external CDNs (Tailwind and Supabase), there is no build step required.
@@ -28,7 +89,7 @@ To run the project locally:
 
 ## How to Update the Text and Images
 
-Navigate to the `login.html` path of your deployed application (e.g., `https://username.github.io/repo/login.html`). Log in using the email and password you created in Supabase Authentication. After successfully logging in, you will be redirected to `admin.html`.
+Navigate to the `admin.html` path of your deployed application (e.g., `https://username.github.io/repo/admin.html`). Log in using the email and password you created in Supabase Authentication. After successfully logging in, you will be able to access the admin dashboard.
 
 * **Prices:** Update the numeric values in the input boxes and click "Save All Changes".
 * **Social Links:** Update the URLs/Phone numbers in the Social & Contact section and click "Update Links".

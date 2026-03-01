@@ -1,23 +1,53 @@
 document.addEventListener('DOMContentLoaded', async () => {
+    const loginContainer = document.getElementById('login-container');
+    const dashboardContainer = document.getElementById('dashboard-container');
+
     // Check if user is logged in
     const { data: { session } } = await supabase.auth.getSession();
 
-    if (!session) {
-        window.location.href = 'login.html';
-        return;
+    if (session) {
+        showDashboard(session.user);
+    } else {
+        loginContainer.classList.remove('hidden');
     }
 
-    // Set user info
-    document.getElementById('admin-user-email').innerText = session.user.email;
+    // Handle Login
+    document.getElementById('login-form').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const email = document.getElementById('login-email').value;
+        const password = document.getElementById('login-password').value;
+        const errorEl = document.getElementById('login-error');
+
+        errorEl.classList.add('hidden');
+
+        const { data, error } = await supabase.auth.signInWithPassword({
+            email,
+            password,
+        });
+
+        if (error) {
+            errorEl.innerText = error.message;
+            errorEl.classList.remove('hidden');
+        } else {
+            showDashboard(data.user);
+        }
+    });
 
     // Logout
     document.getElementById('logout-btn').addEventListener('click', async () => {
         await supabase.auth.signOut();
-        window.location.href = 'login.html';
+        window.location.reload();
     });
 
-    // Load existing data
-    await loadAdminData();
+    function showDashboard(user) {
+        document.getElementById('login-container').classList.add('hidden');
+        document.getElementById('dashboard-container').classList.remove('hidden');
+        document.getElementById('dashboard-container').classList.add('flex');
+
+        document.getElementById('admin-user-email').innerText = user.email;
+        loadAdminData();
+    }
+
 
     // Attach event listeners to save buttons
     document.getElementById('save-prices-btn').addEventListener('click', savePrices);
