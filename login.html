@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Admin Login | Ceramic Pro Egypt</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#ec008c",
+                        "primary-hover": "#c20073",
+                        "background-light": "#f4f4f9",
+                        "background-dark": "#121212",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1e1e1e",
+                        "text-light": "#333333",
+                        "text-dark": "#e0e0e0",
+                        "border-light": "#e5e7eb",
+                        "border-dark": "#333333",
+                    },
+                    fontFamily: {
+                        display: ["Exo 2", "sans-serif"],
+                        body: ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.5rem",
+                    },
+                },
+            },
+        };
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-body text-text-light dark:text-text-dark antialiased min-h-screen flex items-center justify-center">
+    <div class="bg-surface-light dark:bg-surface-dark p-8 rounded-xl shadow-lg border border-border-light dark:border-border-dark w-full max-w-md">
+        <div class="flex items-center justify-center gap-2 mb-8">
+            <img src="assets/images/logo.jpg" alt="Logo" class="w-10 h-10 object-cover rounded">
+            <h1 class="text-2xl font-display font-bold text-black dark:text-white tracking-wider">CERAMIC<span class="text-primary">PRO</span></h1>
+        </div>
+        <h2 class="text-xl font-bold mb-6 text-center">Admin Login</h2>
+        <form id="login-form" class="space-y-4">
+            <div>
+                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Email</label>
+                <input id="email" type="email" required class="block w-full rounded-md border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-primary focus:border-primary sm:text-sm p-2 border" />
+            </div>
+            <div>
+                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Password</label>
+                <input id="password" type="password" required class="block w-full rounded-md border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-primary focus:border-primary sm:text-sm p-2 border" />
+            </div>
+            <div id="login-error" class="text-red-500 text-sm hidden">Invalid login credentials.</div>
+            <button type="submit" class="w-full bg-primary hover:bg-primary-hover text-white font-medium py-2 px-4 rounded-md transition-colors shadow-md shadow-primary/20">
+                Log In
+            </button>
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabase.js"></script>
+    <script src="js/login.js"></script>
+</body>
+</html>

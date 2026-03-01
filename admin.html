@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Admin Dashboard | Ceramic Pro Egypt</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#ec008c",
+                        "primary-hover": "#c20073",
+                        "background-light": "#f4f4f9",
+                        "background-dark": "#121212",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1e1e1e",
+                        "text-light": "#333333",
+                        "text-dark": "#e0e0e0",
+                        "border-light": "#e5e7eb",
+                        "border-dark": "#333333",
+                    },
+                    fontFamily: {
+                        display: ["Exo 2", "sans-serif"],
+                        body: ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.5rem",
+                    },
+                },
+            },
+        };
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-body text-text-light dark:text-text-dark antialiased min-h-screen flex flex-col md:flex-row">
+<aside class="w-full md:w-64 bg-surface-light dark:bg-surface-dark border-r border-border-light dark:border-border-dark flex-shrink-0 flex flex-col h-auto md:h-screen sticky top-0 z-50">
+<div class="p-6 flex items-center justify-center border-b border-border-light dark:border-border-dark">
+<div class="flex items-center gap-2">
+<img src="assets/images/logo.jpg" alt="Logo" class="w-8 h-8 object-cover rounded">
+<h1 class="text-xl font-display font-bold text-black dark:text-white tracking-wider">CERAMIC<span class="text-primary">PRO</span></h1>
+</div>
+</div>
+<nav class="flex-1 overflow-y-auto py-4 px-3 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg bg-primary/10 text-primary font-medium" href="#">
+<span class="material-icons">dashboard</span>
+                Dashboard
+            </a>
+</nav>
+<div class="p-4 border-t border-border-light dark:border-border-dark">
+<div class="flex items-center gap-3 mb-4 px-2">
+<div class="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
+<span class="material-icons text-gray-500 dark:text-gray-300">person</span>
+</div>
+<div>
+<p class="text-sm font-semibold text-gray-800 dark:text-white" id="admin-user-email">Admin User</p>
+<p class="text-xs text-gray-500 dark:text-gray-400">Super Admin</p>
+</div>
+</div>
+<button id="logout-btn" class="w-full flex items-center justify-center gap-2 px-4 py-2 border border-border-light dark:border-border-dark rounded-lg text-sm text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+<span class="material-icons text-sm">logout</span>
+                Logout
+            </button>
+</div>
+</aside>
+<main class="flex-1 p-4 md:p-8 overflow-y-auto h-screen">
+<header class="flex justify-between items-center mb-8">
+<div>
+<h2 class="text-2xl font-display font-bold text-gray-900 dark:text-white">Dashboard Overview</h2>
+<p class="text-gray-500 dark:text-gray-400">Manage your Ceramic Pro Egypt website content.</p>
+</div>
+<div class="flex items-center gap-4">
+<button aria-label="Toggle Dark Mode" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-500 dark:text-gray-400 transition-colors" onclick="document.documentElement.classList.toggle('dark')">
+<span class="material-icons">dark_mode</span>
+</button>
+<a class="hidden md:flex items-center gap-2 text-primary font-medium hover:text-primary-hover transition-colors" href="index.html" target="_blank">
+                    View Live Site
+                    <span class="material-icons text-sm">open_in_new</span>
+</a>
+</div>
+</header>
+<div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
+<div class="col-span-1 lg:col-span-2 xl:col-span-2 bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm border border-border-light dark:border-border-dark p-6">
+<div class="flex items-center justify-between mb-6">
+<h3 class="text-lg font-bold font-display text-gray-900 dark:text-white flex items-center gap-2">
+<span class="material-icons text-primary">local_offer</span>
+                        Core Service Pricing
+                    </h3>
+<button id="save-prices-btn" class="text-sm text-primary hover:text-primary-hover font-medium">Save All Changes</button>
+</div>
+<div class="space-y-4">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between p-4 rounded-lg bg-gray-50 dark:bg-gray-800/50 border border-border-light dark:border-border-dark group hover:border-primary/30 transition-colors">
+<div class="mb-2 sm:mb-0">
+<h4 class="font-semibold text-gray-800 dark:text-white">PPF Package</h4>
+<p class="text-xs text-gray-500 dark:text-gray-400">Paint Protection Film</p>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-sm font-medium text-gray-500 dark:text-gray-400">L.E.</span>
+<input id="input-price-ppf" class="w-32 rounded-md border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-primary focus:border-primary shadow-sm" placeholder="Price" type="text" value=""/>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row sm:items-center justify-between p-4 rounded-lg bg-gray-50 dark:bg-gray-800/50 border border-border-light dark:border-border-dark group hover:border-primary/30 transition-colors">
+<div class="mb-2 sm:mb-0">
+<h4 class="font-semibold text-gray-800 dark:text-white">Nano Ceramic</h4>
+<p class="text-xs text-gray-500 dark:text-gray-400">9H Ceramic coating</p>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-sm font-medium text-gray-500 dark:text-gray-400">L.E.</span>
+<input id="input-price-nano" class="w-32 rounded-md border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-primary focus:border-primary shadow-sm" placeholder="Price" type="text" value=""/>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row sm:items-center justify-between p-4 rounded-lg bg-gray-50 dark:bg-gray-800/50 border border-border-light dark:border-border-dark group hover:border-primary/30 transition-colors">
+<div class="mb-2 sm:mb-0">
+<h4 class="font-semibold text-gray-800 dark:text-white">Paint Correction</h4>
+<p class="text-xs text-gray-500 dark:text-gray-400">Swirl mark &amp; scratch removal</p>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-sm font-medium text-gray-500 dark:text-gray-400">L.E.</span>
+<input id="input-price-correction" class="w-32 rounded-md border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-primary focus:border-primary shadow-sm" placeholder="Price" type="text" value=""/>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row sm:items-center justify-between p-4 rounded-lg bg-gray-50 dark:bg-gray-800/50 border border-border-light dark:border-border-dark group hover:border-primary/30 transition-colors">
+<div class="mb-2 sm:mb-0">
+<h4 class="font-semibold text-gray-800 dark:text-white">Interior Detailing</h4>
+<p class="text-xs text-gray-500 dark:text-gray-400">Deep clean & leather protection</p>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-sm font-medium text-gray-500 dark:text-gray-400">L.E.</span>
+<input id="input-price-interior" class="w-32 rounded-md border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-primary focus:border-primary shadow-sm" placeholder="Price" type="text" value=""/>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row sm:items-center justify-between p-4 rounded-lg bg-gray-50 dark:bg-gray-800/50 border border-border-light dark:border-border-dark group hover:border-primary/30 transition-colors">
+<div class="mb-2 sm:mb-0">
+<h4 class="font-semibold text-gray-800 dark:text-white">Headlights Polish</h4>
+<p class="text-xs text-gray-500 dark:text-gray-400">Restoration of foggy headlights</p>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-sm font-medium text-gray-500 dark:text-gray-400">L.E.</span>
+<input id="input-price-headlights" class="w-32 rounded-md border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-primary focus:border-primary shadow-sm" placeholder="Price" type="text" value=""/>
+</div>
+</div>
+</div>
+</div>
+<div class="col-span-1 lg:col-span-1 xl:col-span-1 bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm border border-border-light dark:border-border-dark p-6">
+<h3 class="text-lg font-bold font-display text-gray-900 dark:text-white flex items-center gap-2 mb-6">
+<span class="material-icons text-primary">share</span>
+                    Social &amp; Contact
+                </h3>
+<form id="links-form" class="space-y-4">
+<div>
+<label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Facebook URL</label>
+<div class="relative rounded-md shadow-sm">
+<input id="input-link-facebook" class="block w-full rounded-md border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-primary focus:border-primary sm:text-sm" placeholder="https://fb.com/..." type="text"/>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Instagram URL</label>
+<div class="relative rounded-md shadow-sm">
+<input id="input-link-instagram" class="block w-full rounded-md border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-primary focus:border-primary sm:text-sm" placeholder="https://instagram.com/..." type="text"/>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Phone Number</label>
+<div class="relative rounded-md shadow-sm">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-icons text-gray-400 text-sm">phone</span>
+</div>
+<input id="input-link-phone" class="pl-10 block w-full rounded-md border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-primary focus:border-primary sm:text-sm" placeholder="+20 1xxxxxxxxx" type="text"/>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Email Address</label>
+<div class="relative rounded-md shadow-sm">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-icons text-gray-400 text-sm">email</span>
+</div>
+<input id="input-link-email" class="pl-10 block w-full rounded-md border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-primary focus:border-primary sm:text-sm" placeholder="info@ceramicpro.eg" type="email"/>
+</div>
+</div>
+<div class="pt-4">
+<button type="submit" class="w-full bg-primary hover:bg-primary-hover text-white font-medium py-2 px-4 rounded-md transition-colors shadow-md shadow-primary/20">
+                            Update Links
+                        </button>
+</div>
+</form>
+</div>
+<div class="col-span-1 lg:col-span-2 xl:col-span-3 bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm border border-border-light dark:border-border-dark p-6">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between mb-6 gap-4">
+<h3 class="text-lg font-bold font-display text-gray-900 dark:text-white flex items-center gap-2">
+<span class="material-icons text-primary">collections</span>
+                        Site Imagery (Provide URLs)
+                    </h3>
+<div class="flex gap-2">
+<button id="save-images-btn" class="bg-primary hover:bg-primary-hover text-white font-medium py-2 px-4 rounded-md text-sm transition-colors flex items-center gap-2">
+<span class="material-icons text-sm">save</span>
+                            Save Images
+                        </button>
+</div>
+</div>
+<div class="space-y-4">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <div>
+        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Logo URL</label>
+        <input id="input-img-logo" class="block w-full rounded-md border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-primary focus:border-primary sm:text-sm" type="text"/>
+    </div>
+    <div>
+        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">PPF Service URL</label>
+        <input id="input-img-ppf" class="block w-full rounded-md border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-primary focus:border-primary sm:text-sm" type="text"/>
+    </div>
+    <div>
+        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Nano Ceramic Service URL</label>
+        <input id="input-img-nano" class="block w-full rounded-md border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-primary focus:border-primary sm:text-sm" type="text"/>
+    </div>
+    <div>
+        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Paint Correction Service URL</label>
+        <input id="input-img-correction" class="block w-full rounded-md border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-primary focus:border-primary sm:text-sm" type="text"/>
+    </div>
+    <div>
+        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Interior Service URL</label>
+        <input id="input-img-interior" class="block w-full rounded-md border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-primary focus:border-primary sm:text-sm" type="text"/>
+    </div>
+    <div>
+        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Headlights Service URL</label>
+        <input id="input-img-headlights" class="block w-full rounded-md border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-primary focus:border-primary sm:text-sm" type="text"/>
+    </div>
+</div>
+</div>
+</div>
+<footer class="mt-12 border-t border-border-light dark:border-border-dark pt-6 text-center text-sm text-gray-500 dark:text-gray-400">
+<p>© 2024 Ceramic Pro Egypt. All rights reserved. <span class="block sm:inline">Designed for Admin Use Only.</span></p>
+</footer>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>
