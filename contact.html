@@ -59,15 +59,15 @@
 </a>
 <div class="flex items-center gap-4 sm:gap-6">
 <nav class="hidden md:flex gap-6 text-sm font-semibold uppercase tracking-wide">
-<a class="hover:text-primary transition-colors" href="index.html#services" style="">Services</a>
-<a class="hover:text-primary transition-colors" href="#" style="">Portfolio</a>
-<a class="hover:text-primary transition-colors" href="index.html#about" style="">About</a>
-<a class="text-primary" href="contact.html" style="">Contact</a>
+<a class="hover:text-primary transition-colors" href="index.html#services" style="" data-i18n="nav.services">Services</a>
+<a class="hover:text-primary transition-colors" href="index.html#about" style="" data-i18n="nav.about">About</a>
+<a class="hover:text-primary transition-colors" href="book.html" style="" data-i18n="nav.book">Book Now</a>
+<a class="text-primary" href="contact.html" style="" data-i18n="nav.contact">Contact</a>
 </nav>
 <div class="flex items-center gap-3 pl-4 border-l border-gray-200 dark:border-gray-700">
-<button class="flex items-center gap-1 text-sm font-medium hover:text-primary transition-colors" style="">
-<span class="" style="">EN</span>
-<span class="material-icons text-base" style="">expand_more</span>
+<button class="lang-toggle-btn flex items-center gap-1 text-sm font-medium hover:text-primary transition-colors" style="">
+<span class="lang-display" style="">EN</span>
+<span class="material-icons text-base" style="">language</span>
 </button>
 <button class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-primary" id="theme-toggle" style="">
 <span class="material-icons hidden dark:block" id="theme-icon-light" style="">light_mode</span>
@@ -87,16 +87,16 @@
 <div class="container mx-auto px-4 relative z-20 flex flex-col md:flex-row items-center justify-between">
 <div class="md:w-1/2 mb-8 md:mb-0">
 <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-4" style="">
-                        GET IN <span class="text-primary" style="">TOUCH</span>
+                        <span data-i18n="contact.title">GET IN</span> <span class="text-primary" style="" data-i18n="contact.title_span">TOUCH</span>
 </h1>
-<p class="text-gray-300 text-lg max-w-md mb-8" style="">
+<p class="text-gray-300 text-lg max-w-md mb-8" style="" data-i18n="contact.desc">
                         Experience the ultimate protection for your vehicle. Visit our studio or contact us for a consultation.
                     </p>
 <div class="flex gap-4">
-<a class="bg-primary hover:bg-pink-600 text-white px-8 py-3 rounded font-bold uppercase tracking-wider transition-all transform hover:-translate-y-1 shadow-lg shadow-pink-500/30" href="book.html" style="">
+<a class="bg-primary hover:bg-pink-600 text-white px-8 py-3 rounded font-bold uppercase tracking-wider transition-all transform hover:-translate-y-1 shadow-lg shadow-pink-500/30" href="book.html" style="" data-i18n="nav.book">
                             Book Now
                         </a>
-<a class="border border-white text-white hover:bg-white hover:text-black px-8 py-3 rounded font-bold uppercase tracking-wider transition-all" href="tel:+201234567890" id="hero-phone" style="">
+<a class="border border-white text-white hover:bg-white hover:text-black px-8 py-3 rounded font-bold uppercase tracking-wider transition-all" href="tel:+201234567890" id="hero-phone" style="" data-i18n="contact.btn.call">
                             Call Us
                         </a>
 </div>
@@ -167,7 +167,7 @@
 <div class="flex flex-col lg:flex-row gap-12">
 <div class="lg:w-1/2">
 <span class="text-primary font-bold tracking-widest uppercase text-sm mb-2 block" style="">Inquiry</span>
-<h2 class="text-3xl md:text-4xl font-extrabold mb-8 text-black dark:text-white" style="">Send Us A Message</h2>
+<h2 class="text-3xl md:text-4xl font-extrabold mb-8 text-black dark:text-white" style="" data-i18n="contact.form.title">Send Us A Message</h2>
 <form class="space-y-6">
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 <div>
@@ -224,7 +224,7 @@
 </div>
 <span class="text-xl font-bold tracking-tighter uppercase" style="">Ceramic Pro</span>
 </div>
-<p class="text-gray-400 text-sm leading-relaxed mb-6" style="">
+<p class="text-gray-400 text-sm leading-relaxed mb-6" style="" data-i18n="footer.desc">
                         World leader in ceramic coatings based on nanotechnology. We offer permanent protection for all surfaces.
                     </p>
 <div class="flex gap-4">
@@ -234,17 +234,14 @@
 </div>
 </div>
 <div>
-<h4 class="text-lg font-bold mb-6 border-b border-gray-800 pb-2 inline-block" style="">Quick Links</h4>
+<h4 class="text-lg font-bold mb-6 border-b border-gray-800 pb-2 inline-block" style="" data-i18n="footer.company">Company</h4>
 <ul class="space-y-3 text-sm text-gray-400">
-<li class="" style=""><a class="hover:text-primary transition-colors" href="index.html" style="">Home</a></li>
-<li class="" style=""><a class="hover:text-primary transition-colors" href="index.html#about" style="">About Us</a></li>
-<li class="" style=""><a class="hover:text-primary transition-colors" href="index.html#services" style="">Services</a></li>
-<li class="" style=""><a class="hover:text-primary transition-colors" href="#" style="">Our Work</a></li>
-<li class="" style=""><a class="hover:text-primary transition-colors" href="contact.html" style="">Contact</a></li>
+<li class="" style=""><a class="hover:text-primary transition-colors" href="index.html#about" style="" data-i18n="nav.about">About Us</a></li>
+<li class="" style=""><a class="hover:text-primary transition-colors" href="contact.html" style="" data-i18n="nav.contact">Contact</a></li>
 </ul>
 </div>
 <div>
-<h4 class="text-lg font-bold mb-6 border-b border-gray-800 pb-2 inline-block" style="">Our Services</h4>
+<h4 class="text-lg font-bold mb-6 border-b border-gray-800 pb-2 inline-block" style="" data-i18n="nav.services">Services</h4>
 <ul class="space-y-3 text-sm text-gray-400">
 <li class="" style=""><a class="hover:text-primary transition-colors" href="book.html" style="">Ceramic Coating</a></li>
 <li class="" style=""><a class="hover:text-primary transition-colors" href="book.html" style="">Kavaca PPF</a></li>
@@ -272,7 +269,7 @@
 </div>
 </div>
 <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
-<p class="" style="">© 2024 Ceramic Pro Egypt. All rights reserved.</p>
+<p class="" style="" data-i18n="footer.rights">© 2024 Ceramic Pro Egypt. All rights reserved.</p>
 <div class="flex gap-6 mt-4 md:mt-0">
 <a class="hover:text-white transition-colors" href="#" style="">Privacy Policy</a>
 <a class="hover:text-white transition-colors" href="#" style="">Terms of Service</a>
@@ -283,5 +280,6 @@
 <script src="js/main.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="js/supabase.js"></script>
+<script src="js/i18n.js"></script>
 </body>
 </html>
