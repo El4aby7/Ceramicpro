@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #ec008c; /* Pink from branding */
+  --color-primary-hover: #c20073;
+  --color-background-light: #f8f9fa;
+  --color-background-dark: #0f0f0f;
+  --color-surface-light: #ffffff;
+  --color-surface-dark: #1a1a1a;
+  --color-border-light: #e5e7eb;
+  --color-border-dark: #27272a;
+  --color-text-light: #1f2937;
+  --color-text-dark: #f3f4f6;
+
+  --font-display: 'Exo 2', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  /* Screen 3 also uses montserrat but we'll stick to exo/inter per majority */
+  --animate-float: float 4s ease-in-out infinite;
+
+  @keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+  }
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.text-gradient {
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
