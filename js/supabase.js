@@ -1,7 +1,7 @@
 const SUPABASE_URL = 'https://jwdsrjaaawqmutjjeyan.supabase.co';
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imp3ZHNyamFhYXdxbXV0ampleWFuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzIzNjM2MzEsImV4cCI6MjA4NzkzOTYzMX0.zi2PdeQmiPh-g5IZrh7WbypRVawHoACWz1p-fBxv6kw';
 
-const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 // Helper function to update text content of multiple elements safely
 function updateElementsText(ids, text) {
@@ -32,7 +32,7 @@ function updateImageSrc(id, src) {
 async function loadPublicContent() {
     try {
         // Load Prices
-        const { data: prices, error: priceError } = await supabase.from('prices').select('*');
+        const { data: prices, error: priceError } = await supabaseClient.from('prices').select('*');
         if (!priceError && prices) {
             prices.forEach(price => {
                 updateElementsText([`price-${price.service_key}`], price.amount);
@@ -40,7 +40,7 @@ async function loadPublicContent() {
         }
 
         // Load Links
-        const { data: links, error: linkError } = await supabase.from('links').select('*');
+        const { data: links, error: linkError } = await supabaseClient.from('links').select('*');
         if (!linkError && links) {
             const facebook = links.find(l => l.platform === 'facebook')?.url;
             const instagram = links.find(l => l.platform === 'instagram')?.url;
@@ -58,7 +58,7 @@ async function loadPublicContent() {
         }
 
         // Load Images
-        const { data: images, error: imageError } = await supabase.from('images').select('*');
+        const { data: images, error: imageError } = await supabaseClient.from('images').select('*');
         if (!imageError && images) {
             images.forEach(img => {
                 // If it's a URL in the DB, use it. Otherwise, default to local assets

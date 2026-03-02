@@ -1,6 +1,5 @@
 const translations = {
     en: {
-        "nav.about": "About",
         "nav.services": "Services",
         "nav.contact": "Contact",
         "nav.book": "Book Now",
@@ -43,7 +42,6 @@ const translations = {
         "contact.form.title": "Send Us A Message"
     },
     ar: {
-        "nav.about": "معلومات عنا",
         "nav.services": "خدماتنا",
         "nav.contact": "اتصل بنا",
         "nav.book": "احجز الان",
