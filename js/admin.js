@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const dashboardContainer = document.getElementById('dashboard-container');
 
     // Check if user is logged in
-    const { data: { session } } = await supabase.auth.getSession();
+    const { data: { session } } = await supabaseClient.auth.getSession();
 
     if (session) {
         showDashboard(session.user);
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         errorEl.classList.add('hidden');
 
-        const { data, error } = await supabase.auth.signInWithPassword({
+        const { data, error } = await supabaseClient.auth.signInWithPassword({
             email,
             password,
         });
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     // Logout
     document.getElementById('logout-btn').addEventListener('click', async () => {
-        await supabase.auth.signOut();
+        await supabaseClient.auth.signOut();
         window.location.reload();
     });
 
@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 async function loadAdminData() {
     // Load Prices
-    const { data: prices, error: priceError } = await supabase.from('prices').select('*');
+    const { data: prices, error: priceError } = await supabaseClient.from('prices').select('*');
     if (!priceError && prices) {
         prices.forEach(p => {
             const input = document.getElementById(`input-price-${p.service_key}`);
@@ -66,7 +66,7 @@ async function loadAdminData() {
     }
 
     // Load Links
-    const { data: links, error: linkError } = await supabase.from('links').select('*');
+    const { data: links, error: linkError } = await supabaseClient.from('links').select('*');
     if (!linkError && links) {
         links.forEach(l => {
             const input = document.getElementById(`input-link-${l.platform}`);
@@ -75,7 +75,7 @@ async function loadAdminData() {
     }
 
     // Load Images
-    const { data: images, error: imageError } = await supabase.from('images').select('*');
+    const { data: images, error: imageError } = await supabaseClient.from('images').select('*');
     if (!imageError && images) {
         images.forEach(i => {
             const input = document.getElementById(`input-img-${i.image_key}`);
@@ -90,7 +90,7 @@ async function savePrices() {
 
     for (const key of keys) {
         const val = document.getElementById(`input-price-${key}`).value;
-        const { error } = await supabase
+        const { error } = await supabaseClient
             .from('prices')
             .update({ amount: val })
             .eq('service_key', key);
@@ -111,7 +111,7 @@ async function saveLinks(e) {
 
     for (const key of keys) {
         const val = document.getElementById(`input-link-${key}`).value;
-        const { error } = await supabase
+        const { error } = await supabaseClient
             .from('links')
             .update({ url: val })
             .eq('platform', key);
@@ -131,7 +131,7 @@ async function saveImages() {
 
     for (const key of keys) {
         const val = document.getElementById(`input-img-${key}`).value;
-        const { error } = await supabase
+        const { error } = await supabaseClient
             .from('images')
             .update({ url: val })
             .eq('image_key', key);

@@ -1,0 +1,58 @@
+/* Global Reset and Settings */
+
+/* RTL Specific fixes */
+html[dir="rtl"] .space-x-8 > * + * {
+    margin-right: 2rem;
+    margin-left: 0;
+}
+html[dir="rtl"] .space-x-4 > * + * {
+    margin-right: 1rem;
+    margin-left: 0;
+}
+html[dir="rtl"] .space-x-6 > * + * {
+    margin-right: 1.5rem;
+    margin-left: 0;
+}
+html[dir="rtl"] .gap-8 {
+    gap: 2rem;
+}
+html[dir="rtl"] .gap-4 {
+    gap: 1rem;
+}
+html[dir="rtl"] .gap-6 {
+    gap: 1.5rem;
+}
+
+html[dir="rtl"] .ml-2 {
+    margin-right: 0.5rem;
+    margin-left: 0;
+}
+html[dir="rtl"] .pl-6 {
+    padding-right: 1.5rem;
+    padding-left: 0;
+}
+html[dir="rtl"] .pr-6 {
+    padding-left: 1.5rem;
+    padding-right: 0;
+}
+html[dir="rtl"] .border-l {
+    border-right-width: 1px;
+    border-left-width: 0;
+}
+
+/* Base custom styles extending Tailwind */
+.text-gradient {
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+.float-img {
+    animation: float 4s ease-in-out infinite;
+}

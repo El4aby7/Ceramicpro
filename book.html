@@ -66,6 +66,7 @@
             border-color: #E6358C !important;
         }
     </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark font-body antialiased min-h-screen flex flex-col">
 <nav class="sticky top-0 z-50 bg-surface-light/90 dark:bg-surface-dark/90 backdrop-blur-md border-b border-border-light dark:border-border-dark">
@@ -77,9 +78,8 @@
 </div>
 <span class="font-display font-bold text-xl uppercase tracking-wider hidden sm:block" style="">Ceramic Pro <span class="text-primary" style="">Egypt</span></span>
 </a>
-<div class="flex items-center space-x-4">
+<div class="flex items-center gap-4">
 <a class="text-sm font-medium hover:text-primary transition-colors hidden md:block" href="index.html#services" style="" data-i18n="nav.services">Services</a>
-<a class="text-sm font-medium hover:text-primary transition-colors hidden md:block" href="index.html#about" style="" data-i18n="nav.about">About</a>
 <a class="text-sm font-medium hover:text-primary transition-colors hidden md:block mr-4" href="contact.html" style="" data-i18n="nav.contact">Contact</a>
 <button class="lang-toggle-btn p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors flex items-center gap-1 text-sm font-medium" style="">
 <span class="material-icons-round text-lg" style="">language</span>
@@ -104,7 +104,7 @@
             </p>
 </div>
 <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-<div class="lg:col-span-2 space-y-8">
+<div class="lg:col-span-2 gap-8 flex flex-col">
 <section class="bg-surface-light dark:bg-surface-dark p-6 md:p-8 rounded-xl border border-border-light dark:border-border-dark shadow-sm">
 <div class="flex items-center gap-3 mb-6">
 <div class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold text-sm" style="">1</div>
@@ -247,15 +247,15 @@
 <h2 class="text-xl font-display font-bold uppercase tracking-wide" style="">Vehicle Details</h2>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-<div class="space-y-1">
+<div class="gap-1 flex flex-col">
 <label class="text-sm font-medium text-text-muted-light dark:text-text-muted-dark" style="">Car Make</label>
 <input class="w-full bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all placeholder-gray-400 text-sm" placeholder="e.g. BMW" type="text">
 </div>
-<div class="space-y-1">
+<div class="gap-1 flex flex-col">
 <label class="text-sm font-medium text-text-muted-light dark:text-text-muted-dark" style="">Car Model</label>
 <input class="w-full bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all placeholder-gray-400 text-sm" placeholder="e.g. X5" type="text">
 </div>
-<div class="space-y-1 md:col-span-2">
+<div class="gap-1 flex flex-col md:col-span-2">
 <label class="text-sm font-medium text-text-muted-light dark:text-text-muted-dark" style="">License Plate (Optional)</label>
 <input class="w-full bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all placeholder-gray-400 text-sm" placeholder="ABC 123" type="text">
 </div>
@@ -265,7 +265,7 @@
 <div class="lg:col-span-1">
 <div class="bg-surface-light dark:bg-surface-dark p-6 md:p-8 rounded-xl border border-border-light dark:border-border-dark shadow-lg sticky top-24">
 <h3 class="text-lg font-display font-bold uppercase mb-6 pb-4 border-b border-border-light dark:border-border-dark" style="">Order Summary</h3>
-<div class="space-y-4 mb-8">
+<div class="gap-4 flex flex-col mb-8">
 <div class="flex justify-between text-sm">
 <span class="text-text-muted-light dark:text-text-muted-dark" style="">Service</span>
 <span class="font-medium" id="summary-service">Select a service</span>
@@ -283,12 +283,12 @@
 <span class="font-bold text-2xl text-primary" id="summary-total">0 L.E.</span>
 </div>
 </div>
-<form class="space-y-4">
-<div class="space-y-1">
+<form class="gap-4 flex flex-col">
+<div class="gap-1 flex flex-col">
 <label class="text-sm font-medium text-text-muted-light dark:text-text-muted-dark" style="">Full Name</label>
 <input class="w-full bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all text-sm" type="text">
 </div>
-<div class="space-y-1">
+<div class="gap-1 flex flex-col">
 <label class="text-sm font-medium text-text-muted-light dark:text-text-muted-dark" style="">Phone Number</label>
 <div class="flex">
 <span class="inline-flex items-center px-3 rounded-l-lg border border-r-0 border-border-light dark:border-border-dark bg-gray-50 dark:bg-gray-800 text-gray-500 text-sm" style="">
@@ -312,7 +312,7 @@
 <footer class="bg-surface-light dark:bg-surface-dark border-t border-border-light dark:border-border-dark mt-20">
 <div class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
 <div class="md:flex md:items-center md:justify-between">
-<div class="flex justify-center md:order-2 space-x-6">
+<div class="flex justify-center md:order-2 gap-6">
 <a class="text-text-muted-light dark:text-text-muted-dark hover:text-primary" href="#" id="link-facebook" style="">
 <span class="sr-only" style="">Facebook</span>
 <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" fill-rule="evenodd"></path></svg>

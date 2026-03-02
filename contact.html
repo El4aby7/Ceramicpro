@@ -45,6 +45,7 @@
             filter: grayscale(100%) invert(100%) contrast(83%);
         }
     </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark transition-colors duration-300 min-h-screen flex flex-col">
 <header class="w-full bg-card-light dark:bg-card-dark shadow-sm border-b border-gray-200 dark:border-gray-800 sticky top-0 z-50">
@@ -60,7 +61,6 @@
 <div class="flex items-center gap-4 sm:gap-6">
 <nav class="hidden md:flex gap-6 text-sm font-semibold uppercase tracking-wide">
 <a class="hover:text-primary transition-colors" href="index.html#services" style="" data-i18n="nav.services">Services</a>
-<a class="hover:text-primary transition-colors" href="index.html#about" style="" data-i18n="nav.about">About</a>
 <a class="hover:text-primary transition-colors" href="book.html" style="" data-i18n="nav.book">Book Now</a>
 <a class="text-primary" href="contact.html" style="" data-i18n="nav.contact">Contact</a>
 </nav>
@@ -124,7 +124,7 @@
 <span class="material-icons text-3xl" style="">phone_in_talk</span>
 </div>
 <h3 class="text-xl font-bold mb-3" style="">Contact Info</h3>
-<div class="space-y-3">
+<div class="gap-3 flex flex-col">
 <a class="flex items-center gap-3 text-gray-600 dark:text-gray-400 hover:text-primary transition-colors" href="tel:+201001234567" id="contact-phone" style="">
 <span class="material-icons text-sm" style="">call</span> <span id="text-phone">+20 100 123 4567</span>
                             </a>
@@ -168,7 +168,7 @@
 <div class="lg:w-1/2">
 <span class="text-primary font-bold tracking-widest uppercase text-sm mb-2 block" style="">Inquiry</span>
 <h2 class="text-3xl md:text-4xl font-extrabold mb-8 text-black dark:text-white" style="" data-i18n="contact.form.title">Send Us A Message</h2>
-<form class="space-y-6">
+<form class="gap-6 flex flex-col">
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 <div>
 <label class="block text-sm font-semibold mb-2 text-gray-700 dark:text-gray-300" style="">Name</label>
@@ -235,14 +235,13 @@
 </div>
 <div>
 <h4 class="text-lg font-bold mb-6 border-b border-gray-800 pb-2 inline-block" style="" data-i18n="footer.company">Company</h4>
-<ul class="space-y-3 text-sm text-gray-400">
-<li class="" style=""><a class="hover:text-primary transition-colors" href="index.html#about" style="" data-i18n="nav.about">About Us</a></li>
+<ul class="gap-3 flex flex-col text-sm text-gray-400">
 <li class="" style=""><a class="hover:text-primary transition-colors" href="contact.html" style="" data-i18n="nav.contact">Contact</a></li>
 </ul>
 </div>
 <div>
 <h4 class="text-lg font-bold mb-6 border-b border-gray-800 pb-2 inline-block" style="" data-i18n="nav.services">Services</h4>
-<ul class="space-y-3 text-sm text-gray-400">
+<ul class="gap-3 flex flex-col text-sm text-gray-400">
 <li class="" style=""><a class="hover:text-primary transition-colors" href="book.html" style="">Ceramic Coating</a></li>
 <li class="" style=""><a class="hover:text-primary transition-colors" href="book.html" style="">Kavaca PPF</a></li>
 <li class="" style=""><a class="hover:text-primary transition-colors" href="book.html" style="">Interior Protection</a></li>
@@ -252,7 +251,7 @@
 </div>
 <div>
 <h4 class="text-lg font-bold mb-6 border-b border-gray-800 pb-2 inline-block" style="">Get In Touch</h4>
-<ul class="space-y-4 text-sm text-gray-400">
+<ul class="gap-4 flex flex-col text-sm text-gray-400">
 <li class="flex items-start gap-3" style="">
 <span class="material-icons text-primary text-base mt-1" style="">location_on</span>
 <span class="" style="">Plot 45, Industrial Zone, New Cairo, Egypt</span>
