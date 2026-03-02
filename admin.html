@@ -69,9 +69,17 @@
 </div>
 </div>
 <nav class="flex-1 overflow-y-auto py-4 px-3 space-y-1">
-<a class="flex items-center gap-3 px-4 py-3 rounded-lg bg-primary/10 text-primary font-medium" href="#">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg bg-primary/10 text-primary font-medium" href="#dashboard" id="nav-dashboard">
 <span class="material-icons">dashboard</span>
                 Dashboard
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 font-medium transition-colors" href="#bookings" id="nav-bookings">
+<span class="material-icons">calendar_today</span>
+                Bookings
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 font-medium transition-colors" href="#contacts" id="nav-contacts">
+<span class="material-icons">mail</span>
+                Contacts
             </a>
 </nav>
 <div class="p-4 border-t border-border-light dark:border-border-dark">
@@ -93,8 +101,8 @@
 <main class="flex-1 p-4 md:p-8 overflow-y-auto h-screen">
 <header class="flex justify-between items-center mb-8">
 <div>
-<h2 class="text-2xl font-display font-bold text-gray-900 dark:text-white">Dashboard Overview</h2>
-<p class="text-gray-500 dark:text-gray-400">Manage your Ceramic Pro Egypt website content.</p>
+<h2 id="page-title" class="text-2xl font-display font-bold text-gray-900 dark:text-white">Dashboard Overview</h2>
+<p id="page-desc" class="text-gray-500 dark:text-gray-400">Manage your Ceramic Pro Egypt website content.</p>
 </div>
 <div class="flex items-center gap-4">
 <button aria-label="Toggle Dark Mode" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-500 dark:text-gray-400 transition-colors" onclick="document.documentElement.classList.toggle('dark')">
@@ -106,7 +114,9 @@
 </a>
 </div>
 </header>
-<div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
+
+<!-- Main Dashboard View -->
+<div id="view-dashboard" class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
 <div class="col-span-1 lg:col-span-2 xl:col-span-2 bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm border border-border-light dark:border-border-dark p-6">
 <div class="flex items-center justify-between mb-6">
 <h3 class="text-lg font-bold font-display text-gray-900 dark:text-white flex items-center gap-2">
@@ -211,11 +221,16 @@
 </div>
 </form>
 </div>
+<!--
+    Image Management Section:
+    Allows admin to upload files to Supabase Storage.
+    Displays a file input for each key image on the site.
+-->
 <div class="col-span-1 lg:col-span-2 xl:col-span-3 bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm border border-border-light dark:border-border-dark p-6">
 <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-6 gap-4">
 <h3 class="text-lg font-bold font-display text-gray-900 dark:text-white flex items-center gap-2">
 <span class="material-icons text-primary">collections</span>
-                        Site Imagery (Provide URLs)
+                        Site Imagery (Upload Images)
                     </h3>
 <div class="flex gap-2">
 <button id="save-images-btn" class="bg-primary hover:bg-primary-hover text-white font-medium py-2 px-4 rounded-md text-sm transition-colors flex items-center gap-2">
@@ -226,33 +241,101 @@
 </div>
 <div class="space-y-4">
 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <!-- Image file inputs -->
     <div>
-        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Logo URL</label>
-        <input id="input-img-logo" class="block w-full rounded-md border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-primary focus:border-primary sm:text-sm" type="text"/>
+        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Logo</label>
+        <input id="input-img-logo" accept="image/*" class="block w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-primary file:text-white hover:file:bg-primary-hover focus:ring-primary focus:border-primary sm:text-sm" type="file"/>
+        <p class="text-xs text-gray-500 mt-1" id="current-img-logo">Current: <a href="#" target="_blank" class="text-primary hover:underline">None</a></p>
     </div>
     <div>
-        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">PPF Service URL</label>
-        <input id="input-img-ppf" class="block w-full rounded-md border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-primary focus:border-primary sm:text-sm" type="text"/>
+        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">PPF Service Image</label>
+        <input id="input-img-ppf" accept="image/*" class="block w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-primary file:text-white hover:file:bg-primary-hover focus:ring-primary focus:border-primary sm:text-sm" type="file"/>
+        <p class="text-xs text-gray-500 mt-1" id="current-img-ppf">Current: <a href="#" target="_blank" class="text-primary hover:underline">None</a></p>
     </div>
     <div>
-        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Nano Ceramic Service URL</label>
-        <input id="input-img-nano" class="block w-full rounded-md border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-primary focus:border-primary sm:text-sm" type="text"/>
+        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Nano Ceramic Service Image</label>
+        <input id="input-img-nano" accept="image/*" class="block w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-primary file:text-white hover:file:bg-primary-hover focus:ring-primary focus:border-primary sm:text-sm" type="file"/>
+        <p class="text-xs text-gray-500 mt-1" id="current-img-nano">Current: <a href="#" target="_blank" class="text-primary hover:underline">None</a></p>
     </div>
     <div>
-        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Paint Correction Service URL</label>
-        <input id="input-img-correction" class="block w-full rounded-md border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-primary focus:border-primary sm:text-sm" type="text"/>
+        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Paint Correction Service Image</label>
+        <input id="input-img-correction" accept="image/*" class="block w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-primary file:text-white hover:file:bg-primary-hover focus:ring-primary focus:border-primary sm:text-sm" type="file"/>
+        <p class="text-xs text-gray-500 mt-1" id="current-img-correction">Current: <a href="#" target="_blank" class="text-primary hover:underline">None</a></p>
     </div>
     <div>
-        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Interior Service URL</label>
-        <input id="input-img-interior" class="block w-full rounded-md border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-primary focus:border-primary sm:text-sm" type="text"/>
+        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Interior Service Image</label>
+        <input id="input-img-interior" accept="image/*" class="block w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-primary file:text-white hover:file:bg-primary-hover focus:ring-primary focus:border-primary sm:text-sm" type="file"/>
+        <p class="text-xs text-gray-500 mt-1" id="current-img-interior">Current: <a href="#" target="_blank" class="text-primary hover:underline">None</a></p>
     </div>
     <div>
-        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Headlights Service URL</label>
-        <input id="input-img-headlights" class="block w-full rounded-md border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-primary focus:border-primary sm:text-sm" type="text"/>
+        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Headlights Service Image</label>
+        <input id="input-img-headlights" accept="image/*" class="block w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-primary file:text-white hover:file:bg-primary-hover focus:ring-primary focus:border-primary sm:text-sm" type="file"/>
+        <p class="text-xs text-gray-500 mt-1" id="current-img-headlights">Current: <a href="#" target="_blank" class="text-primary hover:underline">None</a></p>
     </div>
 </div>
 </div>
 </div>
+</div>
+<!-- End Image Management Section -->
+</div>
+
+<!-- Bookings View -->
+<div id="view-bookings" class="hidden flex-col gap-6">
+    <div class="bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm border border-border-light dark:border-border-dark p-6 overflow-hidden">
+        <h3 class="text-lg font-bold font-display text-gray-900 dark:text-white flex items-center gap-2 mb-4">
+            <span class="material-icons text-primary">calendar_today</span>
+            Recent Bookings
+        </h3>
+        <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse">
+                <thead>
+                    <tr class="border-b border-border-light dark:border-border-dark text-sm text-gray-500 dark:text-gray-400">
+                        <th class="py-3 px-4 font-semibold">Date & Time</th>
+                        <th class="py-3 px-4 font-semibold">Customer</th>
+                        <th class="py-3 px-4 font-semibold">Service</th>
+                        <th class="py-3 px-4 font-semibold">Car Details</th>
+                        <th class="py-3 px-4 font-semibold">Price</th>
+                        <th class="py-3 px-4 font-semibold">Status</th>
+                    </tr>
+                </thead>
+                <tbody id="bookings-table-body" class="text-sm">
+                    <tr>
+                        <td colspan="6" class="py-4 text-center text-gray-500">Loading bookings...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- Contacts View -->
+<div id="view-contacts" class="hidden flex-col gap-6">
+    <div class="bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm border border-border-light dark:border-border-dark p-6 overflow-hidden">
+        <h3 class="text-lg font-bold font-display text-gray-900 dark:text-white flex items-center gap-2 mb-4">
+            <span class="material-icons text-primary">mail</span>
+            Contact Messages
+        </h3>
+        <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse">
+                <thead>
+                    <tr class="border-b border-border-light dark:border-border-dark text-sm text-gray-500 dark:text-gray-400">
+                        <th class="py-3 px-4 font-semibold">Date</th>
+                        <th class="py-3 px-4 font-semibold">Name</th>
+                        <th class="py-3 px-4 font-semibold">Contact Info</th>
+                        <th class="py-3 px-4 font-semibold">Interest</th>
+                        <th class="py-3 px-4 font-semibold">Message</th>
+                    </tr>
+                </thead>
+                <tbody id="contacts-table-body" class="text-sm">
+                    <tr>
+                        <td colspan="5" class="py-4 text-center text-gray-500">Loading messages...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
 <footer class="mt-12 border-t border-border-light dark:border-border-dark pt-6 text-center text-sm text-gray-500 dark:text-gray-400">
 <p>© 2024 Ceramic Pro Egypt. All rights reserved. <span class="block sm:inline">Designed for Admin Use Only.</span></p>
 </footer>

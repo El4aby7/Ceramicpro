@@ -122,7 +122,12 @@
 <h2 class="font-display text-4xl font-bold mb-4" style=""><span data-i18n="services.title">Our Premium</span> <span class="text-primary" style="" data-i18n="services.title_span">Services</span></h2>
 <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto" style="" data-i18n="services.subtitle">World-class protection and restoration services tailored for luxury vehicles.</p>
 </div>
-<div class="gap-2 flex flex-col4">
+<!--
+  Services Container:
+  Uses a vertical flex layout with gap-12 to ensure large service cards stack
+  properly and don't squish horizontally on larger screens.
+-->
+<div class="gap-12 flex flex-col">
 <div class="group relative bg-white dark:bg-surface-dark rounded-2xl p-8 lg:p-12 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-800 overflow-visible">
 <div class="grid lg:grid-cols-2 gap-12 items-center">
 <div class="relative z-10">
@@ -233,6 +238,7 @@
 </div>
 </div>
 </div>
+<!-- End of Services Container -->
 </div>
 </section>
 <section class="py-20 relative overflow-hidden">

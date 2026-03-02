@@ -210,28 +210,28 @@
 <div class="grid grid-cols-7 gap-1 text-center text-xs text-text-muted-light mb-2">
 <div class="" style="">Su</div><div class="" style="">Mo</div><div class="" style="">Tu</div><div class="" style="">We</div><div class="" style="">Th</div><div class="" style="">Fr</div><div class="" style="">Sa</div>
 </div>
-<div class="grid grid-cols-7 gap-1 text-sm">
+<div class="grid grid-cols-7 gap-1 text-sm" id="calendar-days">
 <div class="text-gray-300 dark:text-gray-700 p-2" style="">29</div>
 <div class="text-gray-300 dark:text-gray-700 p-2" style="">30</div>
-<div class="hover:bg-primary/20 dark:hover:bg-primary/20 cursor-pointer rounded-md p-2" style="">1</div>
-<div class="hover:bg-primary/20 dark:hover:bg-primary/20 cursor-pointer rounded-md p-2" style="">2</div>
-<div class="hover:bg-primary/20 dark:hover:bg-primary/20 cursor-pointer rounded-md p-2" style="">3</div>
-<div class="bg-primary text-white rounded-md p-2 font-bold shadow-md shadow-primary/30" style="">4</div>
-<div class="hover:bg-primary/20 dark:hover:bg-primary/20 cursor-pointer rounded-md p-2" style="">5</div>
-<div class="hover:bg-primary/20 dark:hover:bg-primary/20 cursor-pointer rounded-md p-2" style="">6</div>
-<div class="hover:bg-primary/20 dark:hover:bg-primary/20 cursor-pointer rounded-md p-2" style="">7</div>
+<div class="hover:bg-primary/20 dark:hover:bg-primary/20 cursor-pointer rounded-md p-2 date-btn" data-date="2024-10-01" style="">1</div>
+<div class="hover:bg-primary/20 dark:hover:bg-primary/20 cursor-pointer rounded-md p-2 date-btn" data-date="2024-10-02" style="">2</div>
+<div class="hover:bg-primary/20 dark:hover:bg-primary/20 cursor-pointer rounded-md p-2 date-btn" data-date="2024-10-03" style="">3</div>
+<div class="bg-primary text-white rounded-md p-2 font-bold shadow-md shadow-primary/30 date-btn selected" data-date="2024-10-04" style="">4</div>
+<div class="hover:bg-primary/20 dark:hover:bg-primary/20 cursor-pointer rounded-md p-2 date-btn" data-date="2024-10-05" style="">5</div>
+<div class="hover:bg-primary/20 dark:hover:bg-primary/20 cursor-pointer rounded-md p-2 date-btn" data-date="2024-10-06" style="">6</div>
+<div class="hover:bg-primary/20 dark:hover:bg-primary/20 cursor-pointer rounded-md p-2 date-btn" data-date="2024-10-07" style="">7</div>
 </div>
 </div>
 </div>
 <div>
 <label class="block text-sm font-medium mb-2 text-text-muted-light dark:text-text-muted-dark" style="">Available Slots</label>
-<div class="grid grid-cols-2 gap-3">
-<button class="py-2 px-4 rounded border border-border-light dark:border-border-dark text-sm hover:border-primary hover:text-primary transition-colors" style="">09:00 AM</button>
-<button class="py-2 px-4 rounded border border-border-light dark:border-border-dark text-sm hover:border-primary hover:text-primary transition-colors bg-gray-100 dark:bg-gray-800 opacity-50 cursor-not-allowed line-through" style="">10:00 AM</button>
-<button class="py-2 px-4 rounded border border-primary text-primary bg-primary/10 text-sm font-bold shadow-sm ring-1 ring-primary" style="">11:00 AM</button>
-<button class="py-2 px-4 rounded border border-border-light dark:border-border-dark text-sm hover:border-primary hover:text-primary transition-colors" style="">01:00 PM</button>
-<button class="py-2 px-4 rounded border border-border-light dark:border-border-dark text-sm hover:border-primary hover:text-primary transition-colors" style="">03:00 PM</button>
-<button class="py-2 px-4 rounded border border-border-light dark:border-border-dark text-sm hover:border-primary hover:text-primary transition-colors" style="">05:00 PM</button>
+<div class="grid grid-cols-2 gap-3" id="time-slots">
+<button class="time-btn py-2 px-4 rounded border border-border-light dark:border-border-dark text-sm hover:border-primary hover:text-primary transition-colors" data-time="09:00:00" style="">09:00 AM</button>
+<button class="time-btn py-2 px-4 rounded border border-border-light dark:border-border-dark text-sm hover:border-primary hover:text-primary transition-colors bg-gray-100 dark:bg-gray-800 opacity-50 cursor-not-allowed line-through" disabled data-time="10:00:00" style="">10:00 AM</button>
+<button class="time-btn py-2 px-4 rounded border border-primary text-primary bg-primary/10 text-sm font-bold shadow-sm ring-1 ring-primary selected" data-time="11:00:00" style="">11:00 AM</button>
+<button class="time-btn py-2 px-4 rounded border border-border-light dark:border-border-dark text-sm hover:border-primary hover:text-primary transition-colors" data-time="13:00:00" style="">01:00 PM</button>
+<button class="time-btn py-2 px-4 rounded border border-border-light dark:border-border-dark text-sm hover:border-primary hover:text-primary transition-colors" data-time="15:00:00" style="">03:00 PM</button>
+<button class="time-btn py-2 px-4 rounded border border-border-light dark:border-border-dark text-sm hover:border-primary hover:text-primary transition-colors" data-time="17:00:00" style="">05:00 PM</button>
 </div>
 <p class="mt-4 text-xs text-text-muted-light dark:text-text-muted-dark flex items-center gap-2" style="">
 <span class="w-2 h-2 rounded-full bg-primary"></span> Selected
@@ -249,15 +249,15 @@
 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 <div class="gap-1 flex flex-col">
 <label class="text-sm font-medium text-text-muted-light dark:text-text-muted-dark" style="">Car Make</label>
-<input class="w-full bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all placeholder-gray-400 text-sm" placeholder="e.g. BMW" type="text">
+<input id="car-make" class="w-full bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all placeholder-gray-400 text-sm" placeholder="e.g. BMW" type="text">
 </div>
 <div class="gap-1 flex flex-col">
 <label class="text-sm font-medium text-text-muted-light dark:text-text-muted-dark" style="">Car Model</label>
-<input class="w-full bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all placeholder-gray-400 text-sm" placeholder="e.g. X5" type="text">
+<input id="car-model" class="w-full bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all placeholder-gray-400 text-sm" placeholder="e.g. X5" type="text">
 </div>
 <div class="gap-1 flex flex-col md:col-span-2">
 <label class="text-sm font-medium text-text-muted-light dark:text-text-muted-dark" style="">License Plate (Optional)</label>
-<input class="w-full bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all placeholder-gray-400 text-sm" placeholder="ABC 123" type="text">
+<input id="license-plate" class="w-full bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all placeholder-gray-400 text-sm" placeholder="ABC 123" type="text">
 </div>
 </div>
 </section>
@@ -272,21 +272,21 @@
 </div>
 <div class="flex justify-between text-sm">
 <span class="text-text-muted-light dark:text-text-muted-dark" style="">Date</span>
-<span class="font-medium" style="">Oct 4, 2024</span>
+<span class="font-medium" id="summary-date" style="">Oct 4, 2024</span>
 </div>
 <div class="flex justify-between text-sm">
 <span class="text-text-muted-light dark:text-text-muted-dark" style="">Time</span>
-<span class="font-medium" style="">11:00 AM</span>
+<span class="font-medium" id="summary-time" style="">11:00 AM</span>
 </div>
 <div class="pt-4 border-t border-border-light dark:border-border-dark flex justify-between items-center">
 <span class="font-bold text-lg" style="">Total</span>
 <span class="font-bold text-2xl text-primary" id="summary-total">0 L.E.</span>
 </div>
 </div>
-<form class="gap-4 flex flex-col">
+<form id="booking-form" class="gap-4 flex flex-col">
 <div class="gap-1 flex flex-col">
 <label class="text-sm font-medium text-text-muted-light dark:text-text-muted-dark" style="">Full Name</label>
-<input class="w-full bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all text-sm" type="text">
+<input id="full-name" required class="w-full bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all text-sm" type="text">
 </div>
 <div class="gap-1 flex flex-col">
 <label class="text-sm font-medium text-text-muted-light dark:text-text-muted-dark" style="">Phone Number</label>
@@ -294,13 +294,14 @@
 <span class="inline-flex items-center px-3 rounded-l-lg border border-r-0 border-border-light dark:border-border-dark bg-gray-50 dark:bg-gray-800 text-gray-500 text-sm" style="">
                                     +20
                                 </span>
-<input class="w-full bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark rounded-r-lg px-4 py-2.5 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all text-sm" type="tel">
+<input id="phone-number" required class="w-full bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark rounded-r-lg px-4 py-2.5 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all text-sm" type="tel">
 </div>
 </div>
-<button class="w-full bg-primary hover:bg-primaryHover text-white font-bold py-4 rounded-lg shadow-lg shadow-primary/30 transition-all transform active:scale-95 flex items-center justify-center gap-2 mt-6" type="button" style="">
+<button id="submit-booking" class="w-full bg-primary hover:bg-primaryHover text-white font-bold py-4 rounded-lg shadow-lg shadow-primary/30 transition-all transform active:scale-95 flex items-center justify-center gap-2 mt-6" type="submit" style="">
 <span class="" style="">Confirm Booking</span>
 <span class="material-icons-round text-sm" style="">arrow_forward</span>
 </button>
+<p id="booking-msg" class="text-center text-sm font-bold hidden mt-2"></p>
 <p class="text-center text-xs text-text-muted-light dark:text-text-muted-dark mt-4" style="">
                             You will pay at the center after service completion.
                         </p>
@@ -335,16 +336,127 @@
 <script src="js/supabase.js"></script>
 <script>
     document.addEventListener('DOMContentLoaded', () => {
+        // --- 1. Handle Service Selection ---
         const serviceRadios = document.querySelectorAll('input[name="service"]');
+        let selectedServiceName = '';
+        let selectedPrice = '';
+
         serviceRadios.forEach(radio => {
             radio.addEventListener('change', (e) => {
-                const price = e.target.closest('label').querySelector('.text-primary.font-bold').innerText;
-                const serviceName = e.target.closest('label').querySelector('h3').innerText;
+                selectedPrice = e.target.closest('label').querySelector('.text-primary.font-bold').innerText;
+                selectedServiceName = e.target.closest('label').querySelector('h3').innerText;
+
                 const summaryService = document.getElementById('summary-service');
                 const summaryTotal = document.getElementById('summary-total');
-                if(summaryService) summaryService.innerText = serviceName;
-                if(summaryTotal) summaryTotal.innerText = price;
+
+                if(summaryService) summaryService.innerText = selectedServiceName;
+                if(summaryTotal) summaryTotal.innerText = selectedPrice;
             });
+        });
+
+        // --- 2. Handle Date Selection ---
+        const dateBtns = document.querySelectorAll('.date-btn');
+        let selectedDate = '2024-10-04'; // default selected in HTML
+
+        dateBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                // Remove selected styling from all
+                dateBtns.forEach(b => {
+                    b.classList.remove('bg-primary', 'text-white', 'font-bold', 'shadow-md', 'shadow-primary/30', 'selected');
+                    b.classList.add('hover:bg-primary/20', 'dark:hover:bg-primary/20', 'cursor-pointer');
+                });
+
+                // Add selected styling to clicked
+                const target = e.target;
+                target.classList.remove('hover:bg-primary/20', 'dark:hover:bg-primary/20', 'cursor-pointer');
+                target.classList.add('bg-primary', 'text-white', 'font-bold', 'shadow-md', 'shadow-primary/30', 'selected');
+
+                selectedDate = target.getAttribute('data-date');
+
+                // Update summary (naive formatting for demo)
+                const dateObj = new Date(selectedDate);
+                const options = { month: 'short', day: 'numeric', year: 'numeric' };
+                document.getElementById('summary-date').innerText = dateObj.toLocaleDateString('en-US', options);
+            });
+        });
+
+        // --- 3. Handle Time Selection ---
+        const timeBtns = document.querySelectorAll('.time-btn');
+        let selectedTime = '11:00:00'; // default selected in HTML
+
+        timeBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                if(e.target.disabled) return;
+
+                // Remove selected styling from all
+                timeBtns.forEach(b => {
+                    if(!b.disabled) {
+                        b.classList.remove('border-primary', 'text-primary', 'bg-primary/10', 'font-bold', 'shadow-sm', 'ring-1', 'ring-primary', 'selected');
+                        b.classList.add('border-border-light', 'dark:border-border-dark', 'hover:border-primary', 'hover:text-primary');
+                    }
+                });
+
+                // Add selected styling to clicked
+                const target = e.target;
+                target.classList.remove('border-border-light', 'dark:border-border-dark', 'hover:border-primary', 'hover:text-primary');
+                target.classList.add('border-primary', 'text-primary', 'bg-primary/10', 'font-bold', 'shadow-sm', 'ring-1', 'ring-primary', 'selected');
+
+                selectedTime = target.getAttribute('data-time');
+                document.getElementById('summary-time').innerText = target.innerText;
+            });
+        });
+
+        // --- 4. Submit Booking to Supabase ---
+        const bookingForm = document.getElementById('booking-form');
+        bookingForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            if (!selectedServiceName) {
+                alert('Please select a service first.');
+                return;
+            }
+
+            const carMake = document.getElementById('car-make').value;
+            const carModel = document.getElementById('car-model').value;
+            const licensePlate = document.getElementById('license-plate').value;
+            const fullName = document.getElementById('full-name').value;
+            const phoneNumber = document.getElementById('phone-number').value;
+
+            const submitBtn = document.getElementById('submit-booking');
+            const msgEl = document.getElementById('booking-msg');
+
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<span class="material-icons-round text-sm animate-spin">refresh</span> Processing...';
+            msgEl.classList.add('hidden');
+
+            const { data, error } = await supabaseClient
+                .from('bookings')
+                .insert([
+                    {
+                        service_name: selectedServiceName,
+                        booking_date: selectedDate,
+                        booking_time: selectedTime,
+                        car_make: carMake,
+                        car_model: carModel,
+                        license_plate: licensePlate,
+                        full_name: fullName,
+                        phone_number: phoneNumber,
+                        total_price: selectedPrice
+                    }
+                ]);
+
+            if (error) {
+                console.error('Booking error:', error);
+                msgEl.innerText = 'Failed to submit booking. Please try again.';
+                msgEl.className = 'text-center text-sm font-bold mt-2 text-red-500';
+            } else {
+                msgEl.innerText = 'Booking confirmed successfully!';
+                msgEl.className = 'text-center text-sm font-bold mt-2 text-green-500';
+                bookingForm.reset();
+            }
+
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = '<span class="">Confirm Booking</span><span class="material-icons-round text-sm">arrow_forward</span>';
         });
     });
 </script>
